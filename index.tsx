@@ -69,7 +69,6 @@ class App extends Component<AppProps, AppState> {
 
         <Timeline milestones={this.state.milestones} />
 
-        <Button>Add Milestone</Button>
       </div>
     );
   }
