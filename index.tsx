@@ -1,12 +1,13 @@
 import React, { Component } from "react";
+import { useState } from "react";
 import { render } from "react-dom";
 import firebase from 'firebase/app'
-
 import "firebase/firestore";
+import DatePicker from "react-datepicker";
+import "react-datepicker/dist/react-datepicker.css";
 import Hello from "./Hello";
 import Timeline from "./Timeline";
 import "./style.css";
-// import { Button } from "@material-ui/core";
 
 interface AppProps {}
 interface AppState {
@@ -26,6 +27,8 @@ class App extends Component<AppProps, AppState> {
     measurementId: "G-CWP97PC32T"
   };
   private db;
+  startDate
+  setStartDate;
 
   constructor(props) {
     super(props);
@@ -39,6 +42,7 @@ class App extends Component<AppProps, AppState> {
     console.log(firebase)
     this.db = firebase.firestore();
     this.getMilestones();
+    
   }
 
   getMilestones() {
@@ -62,12 +66,16 @@ class App extends Component<AppProps, AppState> {
   }
 
   render() {
+      
+
     return (
-      <div>
+      <div className="pa3 bg-light-blue h-100">
         <Hello name={this.state.appname} />
         <p>Milestone Timeline</p>
-
+        <button>Add Milestone</button>
+        
         <Timeline milestones={this.state.milestones} />
+        
 
       </div>
     );

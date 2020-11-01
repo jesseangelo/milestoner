@@ -20,11 +20,14 @@ class Timeline extends Component<AppProps>{
     const ms = (
       <div>
           {
-            sorted.map((milestone) => {
-               return <TimelineEntry 
+            sorted.map((milestone, n) => {
+               return <div>
+                  <TimelineEntry 
                     key={milestone.name}
                     name={milestone.name}
                     when={milestone.when} />
+                    
+                </div>
             })
           }
       </div>

@@ -24,9 +24,9 @@ class TimelineEntry extends Component<AppProps> {
     console.log(distance)
 
     return (
-      <div>
-        <p>{name} <em>
-         {distance}</em> </p>
+      <div className="bb ba mv4 ph3 br3 white bg-red grow">
+        <p className="">{name} </p>
+        <p className="dim"><em> {distance}</em> </p>
       </div>
 
     );
